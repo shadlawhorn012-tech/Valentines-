@@ -1,109 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Just One Question 💖</title>
+# Cute Valentine Program 💘
 
-<style>
-  body {
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
-    font-family: Arial, sans-serif;
-    height: 100vh;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    overflow: hidden;
-  }
+name = "Rea"
 
-  .card {
-    background: rgba(255,255,255,0.15);
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-    max-width: 400px;
-    z-index: 2;
-  }
+print(f"Hi {name}! 💖")
+print("I have an important question for you...")
 
-  h1 {
-    font-size: 2.2em;
-    margin-bottom: 15px;
-  }
-
-  p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-  }
-
-  button {
-    font-size: 1.1em;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  #yesBtn {
-    background: #ff4d6d;
-    color: white;
-    margin-right: 15px;
-  }
-
-  #noBtn {
-    background: white;
-    color: #ff4d6d;
-  }
-
-  .hidden {
-    display: none;
-  }
-</style>
-</head>
-<body>
-
-<!-- 🎶 Background Music -->
-<audio autoplay loop>
-  <source src="japanese-denim.mp3" type="audio/mpeg">
-</audio>
-
-<div class="card" id="questionCard">
-  <h1>Will You Be My Valentine? 💘</h1>
-  <p>Just say yes and let me treat you right.</p>
-
-  <button id="yesBtn" onclick="sayYes()">Yes 💕</button>
-  <button id="noBtn" onclick="shrinkNo()">No 🙈</button>
-</div>
-
-<div class="card hidden" id="yesCard">
-  <h1>You Said Yes 💖</h1>
-  <p>
-    I knew you would 😌  
-    Valentine’s Day is officially ours.
-  </p>
-</div>
-
-<script>
-  let noScale = 1;
-
-  function shrinkNo() {
-    const noBtn = document.getElementById("noBtn");
-    noScale -= 0.15;
-
-    if (noScale <= 0.2) {
-      noBtn.innerText = "Okay fine 😭";
-    }
-
-    noBtn.style.transform = `scale(${noScale})`;
-  }
-
-  function sayYes() {
-    document.getElementById("questionCard").classList.add("hidden");
-    document.getElementById("yesCard").classList.remove("hidden");
-  }
-</script>
-
-</body>
-</html>
+while True:
+    answer = input("Will you be my Valentine? (yes/no): ").strip().lower()
+    
+    if answer == "yes":
+        print("Yayyyyy!! 💕 You just made me the happiest person ever!")
+        break
+    elif answer == "no":
+        print("Oops! That option seems to be unavailable 😜 Try again.")
+    else:
+        print("Please answer with 'yes' only 😌")
